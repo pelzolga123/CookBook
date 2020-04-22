@@ -1,2 +1,19 @@
+<div>
 
-<h1>Posts<h1>
+<div>
+</div>
+
+<div>
+<h1>Recipes</h1>
+<div>
+
+</div>
+<div>
+  <% @posts.each do |post| %>
+    <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
+    <p><%= post.content %></p>
+  <% end %> 
+</div>
+</div>
+   
+</div>

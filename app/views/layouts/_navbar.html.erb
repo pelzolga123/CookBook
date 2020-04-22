@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+<div class="navbar">
+<p class="logo">CookBook App</p>
+<%= link_to 'Sign out', destroy_user_session_path, :method => 'delete', :class=> "nav-link" %>
+</div>
+<% end %>

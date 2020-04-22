@@ -1,3 +1,25 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Sacramento&display=swap');
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f26b5e;
+    
+    a {
+      font-family: 'Comic Neue', cursive;
+      color: #fff;
+      font-size: 20px;
+    }
+    .logo{
+        padding: 0;
+        margin: 0;
+        font-size: 28px;
+        color: #fff;
+    }
+}
