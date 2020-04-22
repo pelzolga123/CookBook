@@ -1,3 +1,79 @@
 // Place all the styles related to the registration controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Sacramento&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+}
+.logo{
+    font-family: 'Sacramento', cursive;
+    color: #f26b5e;
+    font-size: 44px;
+    padding: 40px;
+}
+a{
+  text-decoration: none;
+  font-weight: 700;
+  color: #F29188;
+}
+.log-image {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+.log-form{
+    display: flex;
+    flex-direction: column;
+    float: right;
+    align-items: center;
+    padding:0 20px;
+    height: 100vh;
+    background-color: #FDF2F0;
+    opacity: 0.9;
+    font-family: 'Comic Neue', cursive;
+    width: 35%;
+    h2 {
+      font-weight: 700;
+      font-size: 44px;
+    }
+    .field{
+
+        label, input{
+            font-size: 24px;
+            padding: 5px 0;
+            margin: 10px 0;
+        }
+        input{
+            background-color: #fff;
+            border: 2px solid #F29188;
+            border-radius: 20px;
+        }
+    }
+    .actions{
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+
+        input{
+            background-color: #F29188;
+            border-radius: 20px;
+            padding: 10px;
+            font-family: 'Comic Neue', cursive;
+            color: #fff;
+            width: 50%;
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+}
+.notice, .alert{
+    margin: 0;
+    padding: 0;
+}

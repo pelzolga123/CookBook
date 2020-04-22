@@ -1,7 +1,7 @@
+<%= image_tag Unsplash::Photo.random(query:"cooking", orientation: "landscape")[:urls][:raw], :class=>"log-image"%>
+<div class="log-form">
+<h1 class="logo">CookBook App</h1>
 <h2>Sign up</h2>
-
-<%= image_tag Unsplash::Photo.random(query:"cooking")[:urls][:regular]%>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -29,3 +29,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
