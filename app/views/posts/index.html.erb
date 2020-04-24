@@ -11,7 +11,7 @@
 <div>
   <% @posts.each do |post| %>
     <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
-    <p><%= post.content %></p>
+    <p><%= post.content.html_safe %></p>
     <% post.recipes.each do |r| %>
       <p><%= r.ingredient_name %></p>
       <p><%= r.measurement %></p>

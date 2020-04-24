@@ -1,9 +1,13 @@
-<%= form_with(model: post, local: true) do |f| %>
-    <%= f.text_area :content %>
-    <%= f.submit "Submit" %>
+<h1>Add Recipe</h1>
 
-    <%= f.fields_for :recipes do |form| %>
-      <%= render "recipe_form", f: form %>
-    <% end %>    
-    <%= link_to_add_fields "Add entry", f, :recipes %>
+<%= form_with(model: post, local: true, class: 'post_form' ) do |f| %> 
+    <div>
+      <%= f.text_area :content, :class => "tinymce" %>
+      <%= tinymce %>
+      <%= f.fields_for :recipes do |form| %>
+        <%= render "recipe_form", f: form %>
+      <% end %>    
+      <%= link_to_add_fields "Add entry", f, :recipes %>
+    </div>
+    <%= f.submit "Submit" %>
 <% end %>  

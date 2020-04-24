@@ -48,3 +48,25 @@
       }
     }
 }
+.post_form{
+  display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+
+    .ingredient{
+      list-style-type: none;
+    }
+    .ingredient li:before{
+      background-repeat: no-repeat;
+      background-image: url(jam.png);
+      width: 30px;
+      height: 35px;
+      margin-right: 10px;
+      background-size: 30px;
+      content: '';
+      display: inline-block;
+    }
+}

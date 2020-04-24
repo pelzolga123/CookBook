@@ -7,12 +7,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= tinymce_assets %>
+    <script type="text/javascript" src="/assets/tinymce.js"></script>
+    </head>
 
   <body>
+   <%= render 'layouts/navbar'%>
    <p class = "notice" ><%= notice %> </p>
    <p class = "alert" ><%= alert %></p>
-   <%= render 'layouts/navbar'%>
     <%= yield %>
   </body>
 </html>
