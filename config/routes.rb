@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :posts
+  resources :posts do
+    resources :recipes
+  end  
+  
   authenticated :user do
     root 'posts#index', as: :authenticated_root
   end

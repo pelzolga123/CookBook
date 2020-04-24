@@ -1,6 +1,35 @@
 <% if user_signed_in? %>
 <div class="navbar">
 <p class="logo">CookBook App</p>
+<div class="categories">
+<li>
+<%= image_tag('navbar_buttons/1.png') %>
+<a>Desserts</a>
+</li>
+<li>
+<%= image_tag('navbar_buttons/2.png') %>
+<a>Meat</a>
+</li>
+<li>
+<%= image_tag('navbar_buttons/3.png') %>
+<a>Bread</a>
+</li>
+<li>
+<%= image_tag('navbar_buttons/4.png') %>
+<a>Veggies</a>
+</li>
+<li>
+<%= image_tag('navbar_buttons/5.png') %>
+<a>Italian</a>
+</li>
+<li>
+<%= image_tag('navbar_buttons/6.png') %>
+<a>Drinks</a>
+</li>
+</div>
+
 <%= link_to 'Sign out', destroy_user_session_path, :method => 'delete', :class=> "nav-link" %>
+
+
 </div>
 <% end %>

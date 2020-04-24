@@ -1,4 +1,9 @@
-<%= form_with(model: post, local: true) do |form| %>
-    <%= form.text_area :content %>
-    <%= form.submit "Submit" %>
+<%= form_with(model: post, local: true) do |f| %>
+    <%= f.text_area :content %>
+    <%= f.submit "Submit" %>
+
+    <%= f.fields_for :recipes do |form| %>
+      <%= render "recipe_form", f: form %>
+    <% end %>    
+    <%= link_to_add_fields "Add entry", f, :recipes %>
 <% end %>  

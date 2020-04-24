@@ -12,7 +12,14 @@
   <% @posts.each do |post| %>
     <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
     <p><%= post.content %></p>
+    <% post.recipes.each do |r| %>
+      <p><%= r.ingredient_name %></p>
+      <p><%= r.measurement %></p>
+    <% end %>  
+    <button class='btn btn-primary'><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
   <% end %> 
+
 </div>
 </div>
    

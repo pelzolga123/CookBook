@@ -2,9 +2,10 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :authorized_to_edit_destroy?, only: %i[edit destroy]
 
   def index
-    @posts = current_user.posts
+    @posts = Post.all
   end
 
   def show; end
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @posts = current_user.posts
+    @post.recipes.build 
   end
   
   def create
@@ -19,7 +21,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     respond_to do |format|
       if @post.save
-        format.html { redirect_to authenticated_root_path, notice: 'Post was successfully created.' }
+        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { redirect_to new_post_path, alert: 'post not created' }
@@ -28,9 +30,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
-    params.require(:post).permit(:content, :image)
+    params.require(:post).permit(:content, :image, recipes_attributes: [:id, :ingredient_name, :measurement])
+  end
+
+  def authorized_to_edit_destroy?
+    redirect_to :authenticated_root unless @post.user_id == current_user.id
   end
 end
