@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :recipes
   end  
   
+  resources :users 
+
   authenticated :user do
     root 'posts#index', as: :authenticated_root
   end

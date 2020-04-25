@@ -48,18 +48,115 @@
       }
     }
 }
+.post-page{
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+.info{
+  color:#fff;
+  font-size: 18px;
+  text-align: left;
+  font-family: 'Comic Neue', cursive;
+}
+  .user-card{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 5%;
+    background-color:#FDF2F0;
+    border-radius: 10px;
+    align-items: center;
+
+  button{
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #f26b5e;
+    border: 2px solid #f26b5e;
+    border-radius: 10px;
+    a{
+      color:#fff;
+      font-size: 20px;
+    }
+  }
+  }
+}
+h3{
+  color:#f26b5e;
+  font-family: 'Sacramento', cursive;
+  font-size:36px;
+  text-align: center;
+}
+.h1-form{
+  color:#eee0b1;
+  text-align: center;
+  font-family: 'Comic Neue', cursive;
+}
 .post_form{
   display: flex;
     flex-direction: column;
     width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 10%;
+    margin: 30px auto;
+    background-color:#eee0b1;
+    border-radius: 10px;
 
     .ingredient{
       list-style-type: none;
+      li{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width:80%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+      }
     }
     .ingredient li:before{
+      background-repeat: no-repeat;
+      background-image: url(jam.png);
+      width: 40px;
+      height: 30px;
+      background-size: 30px;
+      content: '';
+      display: inline-block;
+    }
+    .btn, a{
+      margin: 15px auto;
+      padding: 10px;
+      background-color: #f26b5e;
+      border: 2px solid #f26b5e;
+      border-radius: 10px;
+      width:40%;
+      font-size: 20px;
+      color: #fff;
+      font-weight: 700;
+      font-family: 'Comic Neue', cursive;
+    }
+}
+.recipe-section{
+  display:flex;
+  flex-direction: column;
+  width:50%;
+}
+.recipe-card{
+  background-color:#eee0b1;
+  border:none;
+  border-radius:20px;
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  .mesurements-post{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    li:before{
       background-repeat: no-repeat;
       background-image: url(jam.png);
       width: 30px;
@@ -69,4 +166,43 @@
       content: '';
       display: inline-block;
     }
+  }
+
+  p{
+    margin:0;
+    padding:0;
+  }
+  li{
+    list-style-type: none;
+  }
+  .instructions{
+    background-color: #fff;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border:none;
+    border-radius:10px;
+    padding: 10px 10px;
+    font-family: 'Comic Neue', cursive;
+    color: #000;
+    text-align: start;
+  }
+  button{
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #f26b5e;
+    border: 2px solid #f26b5e;
+    border-radius: 10px;
+    width:20%;
+    a{
+      color:#fff;
+      font-size: 20px;
+    }
+  }
+}
+textarea{
+  margin-right: 5px;
+  border: 2px solid #f26b5e;
+  border-radius: 10px;
+  width: 40%;
 }

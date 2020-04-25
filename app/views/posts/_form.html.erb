@@ -1,13 +1,15 @@
-<h1>Add Recipe</h1>
+<h1 class="h1-form">Add Recipe</h1>
 
 <%= form_with(model: post, local: true, class: 'post_form' ) do |f| %> 
     <div>
-      <%= f.text_area :content, :class => "tinymce" %>
-      <%= tinymce %>
+      <h3>Ingredients<h3>
       <%= f.fields_for :recipes do |form| %>
         <%= render "recipe_form", f: form %>
-      <% end %>    
+      <% end %> 
       <%= link_to_add_fields "Add entry", f, :recipes %>
+      <h3>Instructions</h3>
+      <%= f.text_area :content, :class => "tinymce" %>
+      <%= tinymce %>   
     </div>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", :class=>"btn" %>
 <% end %>  

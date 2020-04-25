@@ -1,26 +1,31 @@
-<div>
-
-<div>
+<div class="post-page">
+<div class="user-card">
+    <h2> Hello, <%= current_user.email %> <h2>
+    <button> <%= link_to 'New Recipe', new_post_path %></button>
+    <button> <%= link_to 'Users', users_path %></button>
 </div>
 
-<div>
-<h1>Recipes</h1>
-<div>
+<div class="recipe-section">
+<h1 class="h1-form">Recipes</h1>
 
-</div>
-<div>
   <% @posts.each do |post| %>
-    <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
-    <p><%= post.content.html_safe %></p>
+    <div class='recipe-card'>
+    <p class='info'>Created: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
+    <p class='info'>Author: <%= post.user.email %> </p>  
+    <h3>Ingredients<h3>
     <% post.recipes.each do |r| %>
+      <li class="mesurements-post">
       <p><%= r.ingredient_name %></p>
-      <p><%= r.measurement %></p>
+      <p><%= r.measurement %>g</p>
+      <li>
     <% end %>  
-    <button class='btn btn-primary'><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-
-  <% end %> 
+    <h3>Instructions</h3>
+    <div class="instructions"><%= post.content.html_safe %></div>
+    <button><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+    </div>
+    <% end %> 
 
 </div>
+</div>   
 </div>
-   
 </div>
